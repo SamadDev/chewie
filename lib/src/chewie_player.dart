@@ -10,7 +10,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
 import 'package:video_player/video_player.dart';
-import 'package:wakelock_plus/wakelock_plus.dart';
+// import 'package:wakelock_plus/wakelock_plus.dart';
 
 typedef ChewieRoutePageBuilder = Widget Function(
   BuildContext context,
@@ -158,9 +158,9 @@ class ChewieState extends State<Chewie> {
 
     onEnterFullScreen();
 
-    if (!widget.controller.allowedScreenSleep) {
-      WakelockPlus.enable();
-    }
+    // if (!widget.controller.allowedScreenSleep) {
+    //   WakelockPlus.enable();
+    // }
 
     await Navigator.of(
       context,
@@ -169,9 +169,9 @@ class ChewieState extends State<Chewie> {
     _isFullScreen = false;
     widget.controller.exitFullScreen();
 
-    if (!widget.controller.allowedScreenSleep) {
-      WakelockPlus.disable();
-    }
+    // if (!widget.controller.allowedScreenSleep) {
+    //   WakelockPlus.disable();
+    // }
 
     SystemChrome.setEnabledSystemUIMode(
       SystemUiMode.manual,
